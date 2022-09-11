@@ -2,13 +2,13 @@
 
 * SpringBoot Restful API
 >>GetMapping  
-https://github.com/zhouchenyu000/springboot-redis/blob/main/demo_img/get.png?raw=true
+![image](demo_img/get.png?raw=true). 
 >>PostMapping  
-https://github.com/zhouchenyu000/springboot-redis/blob/main/demo_img/post.png?raw=true
+https://github.com/zhouchenyu000/springboot-redis/blob/main/demo_img/post.png?raw=true. 
 >>PutMapping  
-https://github.com/zhouchenyu000/springboot-redis/blob/main/demo_img/put.png?raw=true
+https://github.com/zhouchenyu000/springboot-redis/blob/main/demo_img/put.png?raw=true. 
 >>DeleteMapping  
-https://github.com/zhouchenyu000/springboot-redis/blob/main/demo_img/del.png?raw=true
+https://github.com/zhouchenyu000/springboot-redis/blob/main/demo_img/del.png?raw=true. 
 * Redis connect   
 >>Create. 
 >>
