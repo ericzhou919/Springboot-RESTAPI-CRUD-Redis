@@ -6,7 +6,7 @@
 ![image](demo_img/get_db.png?raw=true).  
   
 >>PostMapping  
-![image](demo_img/post.png?raw=true).  
+![image](demo_img/post_.png?raw=true).  
 ![image](demo_img/post_db.png?raw=true).  
   
 >>PutMapping  
