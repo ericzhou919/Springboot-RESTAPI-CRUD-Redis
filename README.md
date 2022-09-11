@@ -3,7 +3,6 @@
 * SpringBoot Restful API & Connect Redis DB CRUD. 
 >>Connect Redis  
 ![image](demo_img/connect.png?raw=true). 
-  
 >>GetMapping  
 ![image](demo_img/get.png?raw=true).  
 ![image](demo_img/get_db.png?raw=true).  
