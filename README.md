@@ -1,6 +1,6 @@
 # Practice SpringBoot Redis
 
-* SpringBoot Restful API & Redis DB
+* SpringBoot Restful API & Connect Redis DB CRUD
 >>GetMapping  
 ![image](demo_img/get.png?raw=true).  
 ![image](demo_img/get_db.png?raw=true).  
