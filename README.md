@@ -1,4 +1,4 @@
-# Practice SpringBoot&Redis
+# Practice SpringBoot & Redis & SwaggerUi
 
 * SpringBoot Restful API & Connect Redis DB CRUD. 
 >>Connect Redis   
@@ -130,3 +130,26 @@ public Map<String, Object> deleteProduct(@PathVariable("key") String key) {
 
 ![image](demo_img/del.png?raw=true).  
 ![image](demo_img/del_db.png?raw=true).  
+
+
+## SwaggerUi  
+To add a package to the pom.xml file
+```java
+<dependency>
+    <groupId>org.springdoc</groupId>
+    <artifactId>springdoc-openapi-ui</artifactId>
+    <version>2.1.4</version>
+</dependency>
+```
+```java
+@Configuration
+@EnableWebMvc
+public class SwaggerConfig implements WebMvcConfigurer {
+
+    @Override
+    public void addResourceHandlers(ResourceHandlerRegistry registry) {
+        registry.addResourceHandler("/swagger-ui/**")
+                .addResourceLocations("classpath:/META-INF/resources/webjars/swagger-ui/3.45.0/");
+    }
+}
+```
