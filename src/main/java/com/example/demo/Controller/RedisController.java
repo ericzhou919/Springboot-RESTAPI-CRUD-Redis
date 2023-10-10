@@ -24,69 +24,74 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import com.example.demo.DemoApplication;
 import com.example.demo.Model.RedisModel;
+
 @RestController
 @RequestMapping("/api")
 public class RedisController {
-	Map<String, Object> map= new HashMap<>();
+	Map<String, Object> map = new HashMap<>();
+
 	@GetMapping("/{key}")
-    public Map<String, Object> getOneData(@PathVariable("key") String key) {
+	public Map<String, Object> getOneData(@PathVariable("key") String key) {
 		map.clear();
-		if (DemoApplication.jedis.get(key)==null) {
+		if (DemoApplication.jedis.get(key) == null) {
 			map.put("msg", "no data");
 			return map;
-		}else {
+		} else {
 			map.put(key, DemoApplication.jedis.get(key));
-	        return map;
+			return map;
 		}
-    }
-	
+	}
+
 	@GetMapping("/all")
 	public Map<String, Object> getAllData(@RequestParam Map<String, String> allParams) {
-		Set<String> keys = DemoApplication.jedis.keys("*"); 
-        Iterator<String> k=keys.iterator();
-        while(k.hasNext()){   
-            String key = k.next();   
-            map.put(key, DemoApplication.jedis.get(key).replaceAll("\r\n", ""));
-        }
+		Set<String> keys = DemoApplication.jedis.keys("*");
+		Iterator<String> k = keys.iterator();
+		while (k.hasNext()) {
+			String key = k.next();
+			map.put(key, DemoApplication.jedis.get(key).replaceAll("\r\n", ""));
+		}
 		return map;
 	}
+
 	@PostMapping("/data")
 	public ResponseEntity<Map<String, Object>> createRedisData(@RequestBody RedisModel request) {
 		map.clear();
-	    DemoApplication.jedis.set(request.getKey(),request.getValue());
-	    URI location = ServletUriComponentsBuilder
-	            .fromCurrentRequest()
-	            .path("/{id}")
-	            .buildAndExpand(request.getKey())
-	            .toUri();
+		DemoApplication.jedis.set(request.getKey(), request.getValue());
+		URI location = ServletUriComponentsBuilder
+				.fromCurrentRequest()
+				.path("/{id}")
+				.buildAndExpand(request.getKey())
+				.toUri();
 		map.put("msg", "success");
 		map.put(request.getKey(), request.getValue());
-	    return ResponseEntity.created(location).body(map);
+		return ResponseEntity.created(location).body(map);
 	}
+
 	@PutMapping("/{key}")
 	public Map<String, Object> updateRedisData(
-	        @PathVariable("key") String key, @RequestBody RedisModel request) {
+			@PathVariable("key") String key, @RequestBody RedisModel request) {
 		map.clear();
-		if (DemoApplication.jedis.get(key)==null) {
+		if (DemoApplication.jedis.get(key) == null) {
 			map.put("msg", "no data");
 			return map;
-		}else {
+		} else {
 			DemoApplication.jedis.set(key, request.getValue());
 			map.put("msg", "success update");
 			map.put(key, DemoApplication.jedis.get(key));
-	        return map;
+			return map;
 		}
 	}
+
 	@DeleteMapping("/{key}")
 	public Map<String, Object> deleteProduct(@PathVariable("key") String key) {
 		map.clear();
-		if (DemoApplication.jedis.get(key)==null) {
+		if (DemoApplication.jedis.get(key) == null) {
 			map.put("msg", "no data");
 			return map;
-		}else {
+		} else {
 			DemoApplication.jedis.del(key);
 			map.put("msg", "success del");
-	        return map;
+			return map;
 		}
 	}
 }
