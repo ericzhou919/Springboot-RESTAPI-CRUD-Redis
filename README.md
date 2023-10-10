@@ -1,4 +1,4 @@
-# Practice SpringBoot&Redis
+# Practice SpringBoot&Redis&SwaggerUi
 
 * SpringBoot Restful API & Connect Redis DB CRUD. 
 >>Connect Redis   
