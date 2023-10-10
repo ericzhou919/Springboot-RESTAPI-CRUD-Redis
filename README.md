@@ -1,7 +1,11 @@
 # Practice SpringBoot & Redis & SwaggerUi
 
 * SpringBoot Restful API & Connect Redis DB CRUD. 
->>Connect Redis   
+>>Install and connect Redis
+```cmd
+arch -arm64 brew install redis
+brew services start redis
+```
 ```java
 public static Jedis jedis = new Jedis("localhost");
 public static void main(String[] args) {
