@@ -141,6 +141,7 @@ To add a package to the pom.xml file
     <version>2.1.4</version>
 </dependency>
 ```
+Add config file
 ```java
 @Configuration
 @EnableWebMvc
