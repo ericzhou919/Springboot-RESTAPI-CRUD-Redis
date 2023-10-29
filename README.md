@@ -142,7 +142,7 @@ To add a package to the pom.xml file
 </dependency>
 ```
 Add config file
-```java
+```url
 @Configuration
 @EnableWebMvc
 public class SwaggerConfig implements WebMvcConfigurer {
@@ -154,3 +154,8 @@ public class SwaggerConfig implements WebMvcConfigurer {
     }
 }
 ```
+```java
+http://localhost:8080/swagger-ui/index.html#/
+```
+<img width="1142" alt="image" src="https://github.com/ericzhou919/SpringbootApi-Redis-SwaggerUi/assets/77151742/58d40910-c896-43eb-9197-bd130576f059">
+
